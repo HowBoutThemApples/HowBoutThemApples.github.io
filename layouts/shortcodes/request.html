@@ -1,180 +1,218 @@
 <form id="appleOrderForm">
     <h2>Apple Purchase Request</h2>
+    <div id="flavorCheckboxes" class="checkbox-grid">
+        <label><input type="checkbox" value="heath2" onchange="filterFlavors()"> Heath</label>
+        <label><input type="checkbox" value="oreo2" onchange="filterFlavors()"> Oreo</label>
+        <label><input type="checkbox" value="applePie2" onchange="filterFlavors()"> Apple Pie</label>
+        <label><input type="checkbox" value="tagalong2" onchange="filterFlavors()"> Tagalong</label>
+        <label><input type="checkbox" value="butterfinger2" onchange="filterFlavors()"> Butterfinger</label>
+        <label><input type="checkbox" value="Reeses2" onchange="filterFlavors()"> Reese's</label>
+        <label><input type="checkbox" value="candc2" onchange="filterFlavors()"> Cookies and Cream</label>
+        <label><input type="checkbox" value="sprinkles2" onchange="filterFlavors()"> Sprinkles</label>
+        <label><input type="checkbox" value="thinmint2" onchange="filterFlavors()"> Thin Mint</label>
+        <label><input type="checkbox" value="potatochip2" onchange="filterFlavors()"> Potato Chip</label>
+        <label><input type="checkbox" value="peanut2" onchange="filterFlavors()"> Peanut</label>
+        <label><input type="checkbox" value="pecan2" onchange="filterFlavors()"> Pecan</label>
+        <label><input type="checkbox" value="turtle2" onchange="filterFlavors()"> Turtle</label>
+        <label><input type="checkbox" value="smores2" onchange="filterFlavors()"> S'mores</label>
+        <label><input type="checkbox" value="minichocolatechips2" onchange="filterFlavors()"> Mini Chocolate Chips</label>
+        <label><input type="checkbox" value="minimandms2" onchange="filterFlavors()"> Mini M&Ms</label>
+        <label><input type="checkbox" value="pretzel2" onchange="filterFlavors()"> Pretzel</label>
+        <label><input type="checkbox" value="darkchseasalt2" onchange="filterFlavors()"> Dark Chocolate Sea Salt</label>
+        <label><input type="checkbox" value="chchipcookie2" onchange="filterFlavors()"> Chocolate Chip Cookie</label>
+        <label><input type="checkbox" value="almondjoy2" onchange="filterFlavors()"> Almond Joy</label>
+        <label><input type="checkbox" value="mounds2" onchange="filterFlavors()"> Mounds</label>
+        <label><input type="checkbox" value="pumpkinspice2" onchange="filterFlavors()"> Pumpkin Spice</label>
+        <label><input type="checkbox" value="snickers2" onchange="filterFlavors()"> Snickers</label>
+        <label><input type="checkbox" value="strawberrycheesecake2" onchange="filterFlavors()"> Strawberry Cheesecake</label>
+        <label><input type="checkbox" value="fruitypebbles2" onchange="filterFlavors()"> Fruity Pebbles</label>
+        <label><input type="checkbox" value="cinnamontoastcrunch2" onchange="filterFlavors()"> Cinnamon Toast Crunch</label>
+        <label><input type="checkbox" value="popcorn2" onchange="filterFlavors()"> Popcorn</label>
+        <label><input type="checkbox" value="pinacolada2" onchange="filterFlavors()"> Pina Colada</label>
+        <label><input type="checkbox" value="cinnamonpecan2" onchange="filterFlavors()"> Cinnamon Pecan</label>
+        <label><input type="checkbox" value="bannanapudding2" onchange="filterFlavors()"> Banana Pudding</label>
+        <label><input type="checkbox" value="candycane2" onchange="filterFlavors()"> Candy Cane</label>
+        <label><input type="checkbox" value="darkchandbacon2" onchange="filterFlavors()"> Dark Chocolate and Bacon</label>
+        <label><input type="checkbox" value="coconut2" onchange="filterFlavors()"> Coconut</label>
+        <label><input type="checkbox" value="circusanimalcrackers2" onchange="filterFlavors()"> Circus Animal Crackers</label>
+        <label><input type="checkbox" value="samoa2" onchange="filterFlavors()"> Samoa</label>
+      </div>
+      
     <div id="flavorsContainer">
-        <div class="apple-flavor" data-popularity="10">
+        <div class="apple-flavor" id="heath2" data-popularity="10">
             <label for="heath">Heath:</label>
             <input type="number" id="heath" name="heath" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Heath">
           </div>
-          <div class="apple-flavor" data-popularity="9">
+          <div class="apple-flavor" id="oreo2" data-popularity="9">
             <label for="oreo">Oreo:</label>
             <input type="number" id="oreo" name="oreo" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Oreo">
           </div>
-          <div class="apple-flavor" data-popularity="10">
+          <div class="apple-flavor" id="applePie2" data-popularity="10">
             <label for="applePie">Apple Pie:</label>
             <input type="number" id="applePie" name="applePie" min="0" value="0">
-            <img src="/images/Apple Pictures/applePie.jpg" alt="Carmel Apple Pie">
+            <img src="/images/Apple Pictures/applePie.png" alt="Carmel Apple Pie">
           </div>
-          <div class="apple-flavor" data-popularity="7">
+          <div class="apple-flavor" id="tagalong2" data-popularity="7">
             <label for="tagalong">Tagalong:</label>
             <input type="number" id="tagalong" name="tagalong" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Tagalong">
           </div>
-          <div class="apple-flavor" data-popularity="9">
+          <div class="apple-flavor" id="butterfinger2" data-popularity="9">
             <label for="butterfinger">Butterfinger:</label>
             <input type="number" id="butterfinger" name="butterfinger" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Butterfinger">
           </div>
-          <div class="apple-flavor" data-popularity="9">
+          <div class="apple-flavor" id="Reeses2" data-popularity="9">
             <label for="Reeses">Reese's:</label>
             <input type="number" id="Reeses" name="Reeses" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Reese's">
           </div>
-          <div class="apple-flavor" data-popularity="9">
+          <div class="apple-flavor" id="candc2" data-popularity="9">
             <label for="candc">Cookies and Cream:</label>
             <input type="number" id="candc" name="candc" min="0" value="0">
-            <img src="/images/Apple Pictures/cookiesandCream.jpg" alt="Cookies and Cream">
+            <img src="/images/Apple Pictures/cookiesandCream.png" alt="Cookies and Cream">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="sprinkles2" data-popularity="5">
             <label for="sprinkles">Sprinkles:</label>
             <input type="number" id="sprinkles" name="sprinkles" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Sprinkles">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="thinmint2" data-popularity="5">
             <label for="thinmint">Thin Mint:</label>
             <input type="number" id="thinmint" name="thinmint" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Thin Mint">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="potatochip2" data-popularity="5">
             <label for="potatochip">Potato Chip:</label>
             <input type="number" id="potatochip" name="potatochip" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Potato Chip">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="peanut2" data-popularity="7">
             <label for="peanut">Peanut:</label>
             <input type="number" id="peanut" name="peanut" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="/images/Apple Pictures/peanut.png" alt="Peanut">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="pecan2" data-popularity="5">
             <label for="pecan">Pecan:</label>
             <input type="number" id="pecan" name="pecan" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Pecan">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="turtle2" data-popularity="5">
             <label for="turtle">Turtle:</label>
             <input type="number" id="turtle" name="turtle" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Turtle">
           </div>
-          <div class="apple-flavor" data-popularity="7">
+          <div class="apple-flavor" id="smores2" data-popularity="7">
             <label for="smores">S'mores:</label>
             <input type="number" id="smores" name="smores" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="S'mores">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="minichocolatechips2" data-popularity="5">
             <label for="minichocolatechips">Mini Chocolate Chips:</label>
             <input type="number" id="minichocolatechips" name="minichocolatechips" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Mini Chocolate Chips">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="minimandms2" data-popularity="5">
             <label for="minimandms">Mini M&Ms:</label>
             <input type="number" id="minimandms" name="minimandms" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Mini M&Ms">
           </div>
-          <div class="apple-flavor" data-popularity="8">
+          <div class="apple-flavor" id="pretzel2" data-popularity="8">
             <label for="pretzel">Pretzel:</label>
             <input type="number" id="pretzel" name="pretzel" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Pretzel">
           </div>
-          <div class="apple-flavor" data-popularity="10">
+          <div class="apple-flavor" id="darkchseasalt2" data-popularity="10">
             <label for="darkchseasalt">Dark Chocolate Sea Salt Caramel:</label>
             <input type="number" id="darkchseasalt" name="darkchseasalt" min="0" value="0">
-            <img src="/images/Apple Pictures/darkChocolateSeaSalt.jpg" alt="Dark Chocolate Sea Salt Caramel">
+            <img src="/images/Apple Pictures/darkChocolateSeaSalt.png" alt="Dark Chocolate Sea Salt Caramel">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="chchipcookie2" data-popularity="5">
             <label for="chchipcookie">Chocolate Chip Cookie:</label>
             <input type="number" id="chchipcookie" name="chchipcookie" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Chocolate Chip Cookie">
           </div>
-          <div class="apple-flavor" data-popularity="8">
+          <div class="apple-flavor" id="almondjoy2" data-popularity="8">
             <label for="almondjoy">Almond Joy:</label>
             <input type="number" id="almondjoy" name="almondjoy" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Almond Joy">
           </div>
-          <div class="apple-flavor" data-popularity="6">
+          <div class="apple-flavor" id="mounds2" data-popularity="6">
             <label for="mounds">Mounds:</label>
             <input type="number" id="mounds" name="mounds" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Mounds">
           </div>
-          <div class="apple-flavor" data-popularity="8">
+          <div class="apple-flavor" id="pumpkinspice2" data-popularity="8">
             <label for="pumpkinspice">Pumpkin Spice:</label>
             <input type="number" id="pumpkinspice" name="pumpkinspice" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Pumpkin Spice">
           </div>
-          <div class="apple-flavor" data-popularity="8">
+          <div class="apple-flavor" id="snickers2" data-popularity="8">
             <label for="snickers">Snickers:</label>
             <input type="number" id="snickers" name="snickers" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Snickers">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="strawberrycheesecake2" data-popularity="5">
             <label for="strawberrycheesecake">Strawberry Cheesecake:</label>
             <input type="number" id="strawberrycheesecake" name="strawberrycheesecake" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Strawberry Cheesecake">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="fruitypebbles2" data-popularity="5">
             <label for="fruitypebbles">Fruity Pebbles:</label>
             <input type="number" id="fruitypebbles" name="fruitypebbles" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Fruity Pebbles">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="cinnamontoastcrunch2" data-popularity="5">
             <label for="cinnamontoastcrunch">Cinnamon Toast Crunch:</label>
             <input type="number" id="cinnamontoastcrunch" name="cinnamontoastcrunch" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Cinnamon Toast Crunch">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="popcorn2" data-popularity="5">
             <label for="popcorn">Popcorn:</label>
             <input type="number" id="popcorn" name="popcorn" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Popcorn">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="pinacolada2" data-popularity="5">
             <label for="pinacolada">Pina Colada:</label>
             <input type="number" id="pinacolada" name="pinacolada" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Pina Colada">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="cinnamonpecan2" data-popularity="5">
             <label for="cinnamonpecan">Cinnamon Pecan:</label>
             <input type="number" id="cinnamonpecan" name="cinnamonpecan" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Cinnamon Pecan">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="bannanapudding2" data-popularity="5">
             <label for="bannanapudding">Banana Pudding:</label>
             <input type="number" id="bannanapudding" name="bannanapudding" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Banana Pudding">
           </div>
-          <div class="apple-flavor" data-popularity="7">
+          <div class="apple-flavor" id="candycane2" data-popularity="7">
             <label for="candycane">Candy Cane:</label>
             <input type="number" id="candycane" name="candycane" min="0" value="0">
-            <img src="/images/Apple Pictures/candyCane.jpg" alt="Candy Cane">
+            <img src="/images/Apple Pictures/candyCane.png" alt="Candy Cane">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="darkchandbacon2" data-popularity="5">
             <label for="darkchandbacon">Dark Chocolate and Bacon:</label>
             <input type="number" id="darkchandbacon" name="darkchandbacon" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Dark Chocolate and Bacon">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="coconut2" data-popularity="5">
             <label for="coconut">Coconut:</label>
             <input type="number" id="coconut" name="coconut" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="/images/Apple Pictures/coconut.png" alt="Coconut">
           </div>
-          <div class="apple-flavor" data-popularity="5">
+          <div class="apple-flavor" id="circusanimalcrackers2" data-popularity="5">
             <label for="circusanimalcrackers">Circus Animal Crackers:</label>
             <input type="number" id="circusanimalcrackers" name="circusanimalcrackers" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Circus Animal Crackers">
           </div>
-          <div class="apple-flavor" data-popularity="8">
+          <div class="apple-flavor" id="samoa2" data-popularity="8">
             <label for="samoa">Samoa:</label>
             <input type="number" id="samoa" name="samoa" min="0" value="0">
-            <img src="path/to/red-delicious-image.jpg" alt="Red Delicious">
+            <img src="path/to/red-delicious-image.jpg" alt="Samoa">
           </div>
     </div>
       
@@ -185,74 +223,76 @@
   </form>
 
 <script>
+      
     function calculateOrder() {
-        // Define an array of apple flavors and their corresponding input element IDs
         var appleFlavors = [
-            { name: "Heath", id: "heath" },
-            { name: "Oreo", id: "oreo" },
-            { name: "Apple Pie", id: "applePie" },
-            { name: "Tagalong", id: "tagalong" },
-            { name: "Butterfinger", id: "butterfinger" },
-            { name: "Reese's", id: "Reeses" },
-            { name: "Cookies and Cream", id: "candc" },
-            { name: "Sprinkles", id: "sprinkles" },
-            { name: "Thin Mint", id: "thinmint" },
-            { name: "Potato Chip", id: "potatochip" },
-            { name: "Peanut", id: "peanut" },
-            { name: "Pecan", id: "pecan" },
-            { name: "Turtle", id: "turtle" },
-            { name: "S'mores", id: "smores" },
-            { name: "Mini Chocolate Chips", id: "minichocolatechips" },
-            { name: "Mini M&Ms", id: "minimandms" },
-            { name: "Pretzel", id: "pretzel" },
-            { name: "Dark Chocolate Sea Salt", id: "darkchseasalt" },
-            { name: "Chocolate Chip Cookie", id: "chchipcookie" },
-            { name: "Almond Joy", id: "almondjoy" },
-            { name: "Mounds", id: "mounds" },
-            { name: "Pumpkin Spice", id: "pumpkinspice" },
-            { name: "Snickers", id: "snickers" },
-            { name: "Strawberry Cheesecake", id: "strawberrycheesecake" },
-            { name: "Fruity Pebbles", id: "fruitypebbles" },
-            { name: "Cinnamon Toast Crunch", id: "cinnamontoastcrunch" },
-            { name: "Popcorn", id: "popcorn" },
-            { name: "Pina Colada", id: "pinacolada" },
-            { name: "Cinnamon Pecan", id: "cinnamonpecan" },
-            { name: "Banana Pudding", id: "bannanapudding" },
-            { name: "Candy Cane", id: "candycane" },
-            { name: "Dark Chocolate and Bacon", id: "darkchandbacon" },
-            { name: "Coconut", id: "coconut" },
-            { name: "Circus Animal Crackers", id: "circusanimalcrackers" },
-            { name: "Samoa", id: "samoa" }
-          ];          
+          { name: "Heath", id: "heath" },
+          { name: "Oreo", id: "oreo" },
+          { name: "Apple Pie", id: "applePie" },
+          { name: "Tagalong", id: "tagalong" },
+          { name: "Butterfinger", id: "butterfinger" },
+          { name: "Reese's", id: "Reeses" },
+          { name: "Cookies and Cream", id: "candc" },
+          { name: "Sprinkles", id: "sprinkles" },
+          { name: "Thin Mint", id: "thinmint" },
+          { name: "Potato Chip", id: "potatochip" },
+          { name: "Peanut", id: "peanut" },
+          { name: "Pecan", id: "pecan" },
+          { name: "Turtle", id: "turtle" },
+          { name: "S'mores", id: "smores" },
+          { name: "Mini Chocolate Chips", id: "minichocolatechips" },
+          { name: "Mini M&Ms", id: "minimandms" },
+          { name: "Pretzel", id: "pretzel" },
+          { name: "Dark Chocolate Sea Salt", id: "darkchseasalt" },
+          { name: "Chocolate Chip Cookie", id: "chchipcookie" },
+          { name: "Almond Joy", id: "almondjoy" },
+          { name: "Mounds", id: "mounds" },
+          { name: "Pumpkin Spice", id: "pumpkinspice" },
+          { name: "Snickers", id: "snickers" },
+          { name: "Strawberry Cheesecake", id: "strawberrycheesecake" },
+          { name: "Fruity Pebbles", id: "fruitypebbles" },
+          { name: "Cinnamon Toast Crunch", id: "cinnamontoastcrunch" },
+          { name: "Popcorn", id: "popcorn" },
+          { name: "Pina Colada", id: "pinacolada" },
+          { name: "Cinnamon Pecan", id: "cinnamonpecan" },
+          { name: "Banana Pudding", id: "bannanapudding" },
+          { name: "Candy Cane", id: "candycane" },
+          { name: "Dark Chocolate and Bacon", id: "darkchandbacon" },
+          { name: "Coconut", id: "coconut" },
+          { name: "Circus Animal Crackers", id: "circusanimalcrackers" },
+          { name: "Samoa", id: "samoa" }
+        ];
       
         var totalApples = 0;
         var orderDetails = '';
       
-        // Loop through the apple flavors array
+        // First, sum up the total number of apples
         appleFlavors.forEach(function(flavor) {
-          var quantity = parseInt(document.getElementById(flavor.id).value);
+          var quantity = parseInt(document.getElementById(flavor.id).value) || 0;
           totalApples += quantity;
         });
       
+        // Determine the price per apple based on the total quantity
         var pricePerApple = totalApples >= 25 ? 8 : 10;
-        var estimatedPrice = totalApples * pricePerApple;
-
-        appleFlavors.forEach(function(flavor) {
-            var quantity = parseInt(document.getElementById(flavor.id).value);
-            if (quantity > 0) {
-              var cost = quantity * pricePerApple;
-              orderDetails += `${flavor.name}: ${quantity} @ $${pricePerApple}/apple = $${cost}\n`;
-            }
-          });
-          
-        var shippingRate = 5;
-        var estimatedShipping = totalApples * shippingRate;
       
-        var emailBody = `Order Details:\n${orderDetails}\nTotal Apples: ${totalApples}\nEstimated Price: $${estimatedPrice}\nEstimated Shipping: $${estimatedShipping}\nTotal Estimated Cost: $${estimatedPrice + estimatedShipping}\n\n** Shipping costs may vary depending on weight, location, etc. **`;
+        // Then, calculate the cost for each flavor and build the order details
+        appleFlavors.forEach(function(flavor) {
+          var quantity = parseInt(document.getElementById(flavor.id).value) || 0;
+          if (quantity > 0) {
+            var cost = quantity * pricePerApple;
+            orderDetails += `${flavor.name}: ${quantity} @ $${pricePerApple}/apple = $${cost}\n`;
+          }
+        });
+      
+        var estimatedPrice = totalApples * pricePerApple;
+        var shippingRate = 5;
+      
+        var emailBody = `Order Details:\n${orderDetails}\nTotal Apples: ${totalApples}\nTotal Estimated Cost: $${estimatedPrice}\n\n** Free Shipping within a 25 mile radius **`;
       
         var mailtoLink = `mailto:your_email@example.com?subject=Apple Purchase Request&body=${encodeURIComponent(emailBody)}`;
         window.location.href = mailtoLink;
       }
+      
 
       function sortByPopularity() {
         var container = document.getElementById('flavorsContainer');
@@ -266,9 +306,30 @@
           container.appendChild(flavor);
         });
       }
+
+    // Call the sortByPopularity function when the page loads
+    window.onload = sortByPopularity;
+
+
+    function filterFlavors() {
+        var allCheckboxes = document.querySelectorAll('#flavorCheckboxes input[type="checkbox"]');
       
-      // Call the sortByPopularity function when the page loads
-      window.onload = sortByPopularity;
+        allCheckboxes.forEach(checkbox => {
+          var flavorDiv = document.querySelector(`#flavorsContainer .apple-flavor[id="${checkbox.value}"]`);
+          if (checkbox.checked) {
+            flavorDiv.style.display = 'block';
+          } else {
+            flavorDiv.style.display = 'none';
+            // Reset the input value to 0
+            var input = flavorDiv.querySelector('input[type="number"]');
+            if (input) {
+              input.value = 0;
+            }
+          }
+        });
+      }      
+      
+      
       
 </script>
 
@@ -286,8 +347,8 @@
       }
       
       .apple-flavor img {
-        width: 100px; /* Adjust image size as needed */
-        height: 100px; /* Adjust image size as needed */
+        width: 92%; /* Adjust image size as needed */
+        height: 80%; /* Adjust image size as needed */
         object-fit: cover;
       }
       
@@ -308,6 +369,15 @@
           grid-template-columns: 1fr; /* 1 flavor per row on small screens */
         }
       }
+      
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 4 columns */
+        gap: 10px; /* Space between checkboxes */
+        padding: 2rem;
+        background-color: #397642;
+      }
+      
       
       
 </style>
