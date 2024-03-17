@@ -12,7 +12,7 @@
   }
 
   a {
-
+    line-height: 5rem;
     &:hover,
     &:focus {
       color: $link-color;
@@ -98,6 +98,7 @@
 
   #menu-toggle {
     display: none;
+    
 
     @media only screen and (max-width: 768px) {
       display: initial;
@@ -131,7 +132,7 @@
     }
 
     i {
-
+      line-height: 5rem;
       &:hover,
       &:focus {
         color: $alt-fg-color;
@@ -140,6 +141,7 @@
   }
 
   i {
+    line-height: 5rem;
     color: $fg-color;
     cursor: pointer;
 

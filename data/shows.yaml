@@ -1,0 +1,9 @@
+# data/shows.yaml
+- name: "Craft Show 1"
+  date: "2024-03-25"
+  image: "/images/avatar.png"
+  url: "/shows/test-craft-show"
+- name: "Craft Show 2"
+  date: "2024-04-10"
+  image: "/images/show2.jpg"
+  url: "/shows/show2"

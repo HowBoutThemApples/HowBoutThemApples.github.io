@@ -1,11 +1,57 @@
 <section class="container centered">
-  <div class="about">
-    {{ partialCached "home/avatar.html" . }}
+  <div class="container">
+    <!-- Link to Apple Purchases -->
+    <div class="apple-purchases">
+        <h2>Apple Purchases</h2>
+        <p>Explore our selection and order your favorites today!</p>
+        <a href="/purchases" class="btn">Shop Now</a>
+    </div>
 
-    {{ partialCached "home/author.html" . }}
-
-    {{ partialCached "home/social.html" . }}
-  </div>
-
-  {{ partialCached "home/extensions.html" . }}
+    <!-- Upcoming Craft Shows -->
+    <div class="craft-shows">
+        <h2>Upcoming Craft Shows</h2>
+        <p>Join us at our upcoming events and experience the magic of our apples in person.</p>
+        <div class="shows-grid">
+            {{ range .Site.Data.shows }}
+              {{ if ge .date (now.Format "2006-01-02") }}
+                <div class="show-card">
+                    <a href="{{ .url }}">
+                      <div class="show-image" style="background-image: url('{{ .image }}');">
+                        <div class="show-info">
+                            <h3>{{ .name }}</h3>
+                            <p>{{ .date }}</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</div>
 </section>
+
+<style>
+  .show-card {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.show-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Adjust the height as needed */
+}
+
+.show-info {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(141, 65, 65, 0.5); /* Semi-transparent background for better readability */
+    padding: 10px;
+}
+</style>

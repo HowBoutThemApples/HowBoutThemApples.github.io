@@ -1,37 +1,37 @@
 {
-    "name": "Reese Gerjekian",
-    "short_name": "Reese Gerjekian",
-    "description": "Reese Gerjekian's Personal Website",
+    "name": "How Bout Them Apples by Christine Enright",
+    "short_name": "How Bout Them Apples",
+    "description": "How Bout Them Apples by Christine Enright",
     "icons": [
         {
-            "src": "/images/App_Icons/icon-96x96.png",
-            "sizes": "96x96",
+            "src": "/images/App_Icons/100.png",
+            "sizes": "100x100",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "/images/App_Icons/icon-96x96.png",
-            "sizes": "96x96",
+            "src": "/images/App_Icons/100.png",
+            "sizes": "100x100",
             "type": "image/png",
             "purpose": "maskable"
         },
         {
-            "src": "/images/App_Icons/icon-128x128.png",
+            "src": "/images/App_Icons/128.png",
             "sizes": "128x128",
             "type": "image/png"
         },
         {
-            "src": "/images/App_Icons/icon-144x144.png",
+            "src": "/images/App_Icons/144.png",
             "sizes": "144x144",
             "type": "image/png"
         },
         {
-            "src": "/images/App_Icons/icon-152x152.png",
+            "src": "/images/App_Icons/152.png",
             "sizes": "152x152",
             "type": "image/png"
         },
         {
-            "src": "/images/App_Icons/icon-512x512.png",
+            "src": "/images/App_Icons/512.png",
             "sizes": "512x512",
             "type": "image/png"
         }

@@ -1,5 +1,5 @@
 baseURL = "https://HowBoutThemApples.github.io/"
-title = "How Bout Them Apples"
+title = "How Bout Them Apples 🍎"
 languageCode = "en"
 defaultContentLanguage = "en"
 paginate = 6
@@ -13,10 +13,10 @@ noClasses = false
 [params]
 author = "Christine Enright"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
-description = "How Bout Them Apples Website"
+description = "How Bout Them Apples by Christine Enright"
 keywords = "Candied Carmel Apples,crafts,crafter,craft shows,carmel apples,Christine Enright"
 info = ["", ""]
-avatarURL = "images/avatar.jpeg"
+avatarURL = "images/avatar.png"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
 since = 2003
@@ -25,7 +25,7 @@ since = 2003
 # "auto" (use preference set by browser)
 # "dark" (dark background, light foreground)
 # "light" (light background, dark foreground) (default)
-colorScheme = "auto"
+colorScheme = "light"
 # Hide the toggle button, along with the associated vertical divider
 hideColorSchemeToggle = false
 # Series see also post count
@@ -123,54 +123,37 @@ tag = "tags"
 author = "authors"
 
 [[params.social]]
-name = "Github"
-icon = "fa fa-2x fa-github"
-weight = 1
-url = "https://github.com/rgerjeki"
-
-[[params.social]]
 name = "Instagram"
 icon = "fa fa-2x fa-instagram"
-weight = 3
+weight = 2
 url = "https://www.instagram.com/rgerjeki/"
 
 [[params.social]]
-name = "Twitter"
-icon = "fa fa-2x fa-twitter"
-weight = 4
-url = "https://twitter.com/reg_blog"
+name = "Facebook"
+icon = "fa fa-2x fa-facebook"
+weight = 1
+url = "https://www.facebook.com/HowBoutDemApples"
 
 [[params.social]]
-name = "LinkedIn"
-icon = "fa fa-2x fa-linkedin"
-weight = 2
-url = "https://www.linkedin.com/in/rgerjeki/"
+name = "Email"
+icon = "fa fa-2x fa-envelope"
+weight = 3
+url = "https://mailxto.com/2qfys4"
 
-[[params.social]]
-name = "RSS"
-icon = "fa fa-2x fa-rss"
-weight = 5
-url = "https://rgerjeki.github.io/index.xml"
-rel = "alternate"
-type = "application/rss+xml"
+
 
 [languages.en]
 languageName = ":en:"
 
 [[languages.en.menu.main]]
-name = "About Me"
-weight = 1
+name = "About"
+weight = 2
 url = "about/"
 
 [[languages.en.menu.main]]
-name = "Projects"
-weight = 2
-url = "projects/"
-
-[[languages.en.menu.main]]
-name = "Blog"
-weight = 3
-url = "https://www.reg-blog.com"
+name = "Apple Purchases"
+weight = 1
+url = "apple-purchase-request/"
 
 [[languages.en.menu.main]]
 name = "REG Blog Shop"
