@@ -155,8 +155,8 @@ name = "Apple Purchases"
 weight = 1
 url = "apple-purchase-request/"
 
-[[languages.en.menu.main]]
-name = "REG Blog Shop"
-icon = "fa fa-2x fa-shopping-bag"
-weight = 4
-url = "https://reg-blog.square.site"
+# [[languages.en.menu.main]]
+# name = "REG Blog Shop"
+# icon = "fa fa-2x fa-shopping-bag"
+# weight = 4
+# url = "https://reg-blog.square.site"

@@ -10335,7 +10335,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  color: #d1b396;
+  color: #ffd9b5;
   background-color: #046e3b;
   font-family: Cantarell;
   font-size: 1.8em;
@@ -10350,7 +10350,7 @@ iframe[src*=disqus] {
 
 a {
   font-weight: 500;
-  color: #1e88e5;
+  color: #e51e56;
   text-decoration: none;
   transition: all 0.25s ease-in; }
   a:focus, a:hover {
@@ -10367,7 +10367,7 @@ h5,
 h6 {
   font-family: Cantarell;
   font-weight: 600;
-  color: #f23e44;
+  color: #ffeed7;
   margin: 4rem 0 2.5rem 0; }
   h1:hover .heading-link,
   h2:hover .heading-link,
@@ -10382,7 +10382,7 @@ h6 {
   h4 .heading-link,
   h5 .heading-link,
   h6 .heading-link {
-    color: #1e88e5;
+    color: #e51e56;
     font-weight: inherit;
     text-decoration: none;
     font-size: 80%;
@@ -10471,7 +10471,7 @@ code {
   border-radius: 0.6rem;
   padding: 0.3rem 0.6rem;
   background-color: #005303;
-  color: #d1b396; }
+  color: #ffd9b5; }
 
 blockquote {
   border-left: 2px solid #034626;
@@ -10489,7 +10489,7 @@ table {
 
 table td,
 table th {
-  border: 2px solid #f23e44; }
+  border: 2px solid #ffeed7; }
 
 table tr:first-child th {
   border-top: 0; }
@@ -10601,9 +10601,9 @@ figure {
     border-radius: 0.6rem;
     line-height: 1.4em; }
     .content .post .post-meta .tags .tag a {
-      color: #d1b396; }
+      color: #ffd9b5; }
     .content .post .post-meta .tags .tag a:active {
-      color: #d1b396; }
+      color: #ffd9b5; }
   .content figure {
     margin: 0;
     padding: 0; }
@@ -10642,11 +10642,11 @@ figure {
     .list ul li .title {
       font-size: 1.8rem;
       flex: 2;
-      color: #d1b396;
+      color: #ffd9b5;
       font-family: Cantarell;
       font-weight: 700; }
       .list ul li .title:hover, .list ul li .title:focus {
-        color: #1e88e5; }
+        color: #e51e56; }
 
 @media only screen and (min-width: 768.1px) {
   .list ul:not(.pagination) li {
@@ -10676,13 +10676,13 @@ figure {
         display: inline-block;
         position: relative; }
         .centered .about ul li a {
-          color: #d1b396;
+          color: #ffd9b5;
           text-transform: uppercase;
           margin-left: 1rem;
           margin-right: 1rem;
           font-size: 1.6rem; }
           .centered .about ul li a:hover, .centered .about ul li a:focus {
-            color: #1e88e5; }
+            color: #e51e56; }
           @media only screen and (max-width: 768px) {
             .centered .about ul li a {
               font-size: 1.4rem; } }
@@ -10781,11 +10781,11 @@ figure {
     font-size: 1.7rem;
     font-family: Cantarell;
     font-weight: 600;
-    color: #d1b396; }
+    color: #ffd9b5; }
   .navigation a {
     line-height: 5rem; }
     .navigation a:hover, .navigation a:focus {
-      color: #1e88e5; }
+      color: #e51e56; }
   .navigation .navigation-title {
     letter-spacing: 0.1rem;
     text-transform: uppercase; }
@@ -10829,7 +10829,7 @@ figure {
         display: none; } }
     @media only screen and (max-width: 768px) {
       .navigation .navigation-list .menu-separator {
-        border-top: 2px solid #d1b396;
+        border-top: 2px solid #ffd9b5;
         margin: 0 8rem; }
         .navigation .navigation-list .menu-separator span {
           display: none; } }
@@ -10867,13 +10867,13 @@ figure {
     .navigation .menu-button i {
       line-height: 5rem; }
       .navigation .menu-button i:hover, .navigation .menu-button i:focus {
-        color: #f23e44; }
+        color: #ffeed7; }
   .navigation i {
     line-height: 5rem;
-    color: #d1b396;
+    color: #ffd9b5;
     cursor: pointer; }
     .navigation i:hover, .navigation i:focus {
-      color: #1e88e5; }
+      color: #e51e56; }
 
 .pagination {
   display: flex;
@@ -10950,9 +10950,9 @@ figure {
   background-color: #034626;
   border-radius: 0.6rem; }
   .taxonomy .taxonomy-element a {
-    color: #d1b396; }
+    color: #ffd9b5; }
   .taxonomy .taxonomy-element a:active {
-    color: #d1b396; }
+    color: #ffd9b5; }
 
 .footer {
   width: 100%;
@@ -10961,7 +10961,7 @@ figure {
   line-height: 2rem;
   margin-bottom: 1rem; }
   .footer a {
-    color: #1e88e5; }
+    color: #e51e56; }
 
 .float-container {
   bottom: 2rem;
@@ -10975,17 +10975,17 @@ figure {
     width: 3rem;
     height: 3rem;
     font-size: 2rem;
-    color: #f23e44;
+    color: #ffeed7;
     background-color: #034626;
     border-radius: 0.2rem;
     opacity: 0.5;
     transition: all 0.25s ease-in; }
     .float-container a:hover, .float-container a:focus {
-      color: #1e88e5;
+      color: #e51e56;
       opacity: 1; }
       @media only screen and (max-width: 768px) {
         .float-container a:hover, .float-container a:focus {
-          color: #f23e44;
+          color: #ffeed7;
           opacity: 0.5; } }
     .float-container a i {
       position: absolute;

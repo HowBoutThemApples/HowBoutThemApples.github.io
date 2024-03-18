@@ -8,11 +8,81 @@
     <language>en</language>
     <atom:link href="https://HowBoutThemApples.github.io/shows/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>https://HowBoutThemApples.github.io/shows/test-craft-show/</link>
+      <title>Anchor Bay High School</title>
+      <link>https://HowBoutThemApples.github.io/shows/anchor-bay-high-school/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://HowBoutThemApples.github.io/shows/test-craft-show/</guid>
-      <description></description>
+      <guid>https://HowBoutThemApples.github.io/shows/anchor-bay-high-school/</guid>
+      <description>More information soon!</description>
+    </item>
+    <item>
+      <title>Athens High School</title>
+      <link>https://HowBoutThemApples.github.io/shows/athens-high-school/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://HowBoutThemApples.github.io/shows/athens-high-school/</guid>
+      <description>More information soon!</description>
+    </item>
+    <item>
+      <title>Birchwood Mall</title>
+      <link>https://HowBoutThemApples.github.io/shows/birchwood-mall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://HowBoutThemApples.github.io/shows/birchwood-mall/</guid>
+      <description>More information soon!</description>
+    </item>
+    <item>
+      <title>Chippewa Valley High School</title>
+      <link>https://HowBoutThemApples.github.io/shows/chippewa-valley-high-school/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://HowBoutThemApples.github.io/shows/chippewa-valley-high-school/</guid>
+      <description>More information soon!</description>
+    </item>
+    <item>
+      <title>Clawson Elks</title>
+      <link>https://HowBoutThemApples.github.io/shows/clawson-elks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://HowBoutThemApples.github.io/shows/clawson-elks/</guid>
+      <description>More information soon!</description>
+    </item>
+    <item>
+      <title>Dakota High School</title>
+      <link>https://HowBoutThemApples.github.io/shows/dakota-high-school/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://HowBoutThemApples.github.io/shows/dakota-high-school/</guid>
+      <description>More information soon!</description>
+    </item>
+    <item>
+      <title>De La Salle Collegiate High School</title>
+      <link>https://HowBoutThemApples.github.io/shows/de-la-salle-collegiate-high-school/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://HowBoutThemApples.github.io/shows/de-la-salle-collegiate-high-school/</guid>
+      <description>More information soon!</description>
+    </item>
+    <item>
+      <title>F45</title>
+      <link>https://HowBoutThemApples.github.io/shows/f45/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://HowBoutThemApples.github.io/shows/f45/</guid>
+      <description>More information soon!</description>
+    </item>
+    <item>
+      <title>L’Anse Creuse High School North Bands&#39; 10th Annual Spring 2024 Craft &amp; Vendor Show</title>
+      <link>https://HowBoutThemApples.github.io/shows/lanse-creuse-north-spring24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://HowBoutThemApples.github.io/shows/lanse-creuse-north-spring24/</guid>
+      <description> </description>
+    </item>
+    <item>
+      <title>L’Anse Creuse High School North Bands&#39; 38th Annual Craft Christmas Craft Show</title>
+      <link>https://HowBoutThemApples.github.io/shows/lanse-cruise-north-christmas24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://HowBoutThemApples.github.io/shows/lanse-cruise-north-christmas24/</guid>
+      <description> </description>
+    </item>
+    <item>
+      <title>Macomb Community College</title>
+      <link>https://HowBoutThemApples.github.io/shows/macomb-community-college/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://HowBoutThemApples.github.io/shows/macomb-community-college/</guid>
+      <description>More information soon!</description>
     </item>
   </channel>
 </rss>
