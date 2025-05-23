@@ -31,7 +31,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.121.0'    # bump as desired
+          hugo-version: 'latest'    # bump as desired
           extended: true
 
       # 3) Clean out any stale output
