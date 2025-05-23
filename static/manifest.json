@@ -1,0 +1,46 @@
+{
+    "name": "How Bout Them Apples by Christine Enright",
+    "short_name": "HBTA 🍎",
+    "description": "How Bout Them Apples | Gourmet Chocolate Candied Caramel Apples by Christine Enright",
+    "icons": [
+        {
+            "src": "/images/App_Icons/96x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/images/App_Icons/96x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/images/App_Icons/128x128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/App_Icons/144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/App_Icons/152x152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/App_Icons/512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#046e3b",
+    "theme_color": "#046e3b"
+
+
+}

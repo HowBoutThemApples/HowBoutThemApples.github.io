@@ -1,0 +1,69 @@
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read      # for checkout
+  pages: write        # to push to gh-pages
+  id-token: write     # for OIDC if you use it
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Checkout your repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      # 2) Install Hugo (extended) via the official action
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'    # bump as desired
+          extended: true
+
+      # 3) Clean out any stale output
+      - name: Clean old public/
+        run: rm -rf ./public
+
+      # 4) Configure Pages (captures baseURL for you)
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
+      # 5) Build your site
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: hugo --cleanDestinationDir --gc --minify --baseURL "https://howboutthemapples.github.io/"
+
+      # 6) Upload the artifact specifically for GitHub Pages
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
