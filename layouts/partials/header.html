@@ -1,59 +1,45 @@
-{{/* layouts/partials/header.html */}}
 <nav class="navigation">
   <section class="container">
     <a class="navigation-title" href="{{ .Site.BaseURL | relLangURL }}">
       <img src="/images/tr-nav.png" alt="How Bout Them Apples logo">
     </a>
-
-    {{/* only show toggle if we have a menu or multilingual site */}}
-    {{ if or (gt (len .Site.Menus.main) 0) (hugo.IsMultilingual) }}
+    {{ if or .Site.Menus.main hugo.IsMultilingual }}
       <input type="checkbox" id="menu-toggle" />
       <label class="menu-button float-right" for="menu-toggle">
         <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
       </label>
-
       <ul class="navigation-list">
-
-        {{/* main menu items */}}
-        {{ with .Site.Menus.main }}
+        {{ with .Site.Menus.main}}
           {{ range sort . }}
             <li class="navigation-item">
               {{ if eq .Name "REG Blog Shop" }}
-                <a class="navigation-link"
-                   href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">
+                <a class="navigation-link" href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">
                   <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                 </a>
               {{ else }}
-                <a class="navigation-link"
-                   href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">
-                  {{ .Name }}
-                </a>
+                <a class="navigation-link" href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">{{ .Name }}</a>
               {{ end }}
             </li>
           {{ end }}
         {{ end }}
-
-        {{/* language switcher */}}
         {{ if hugo.IsMultilingual }}
-          {{/* insert a separator before first language link */}}
-          {{ $sep := true }}
-          {{ range .Site.Languages }}
-            {{ if ne $.Site.Language.Lang .Lang }}
-              {{ if $sep }}
-                <li class="navigation-item menu-separator"><span>|</span></li>
-                {{ $sep = false }}
+          {{ $node := . }}
+          {{ .Scratch.Set "separator" true }}
+          {{ range (default .Site.Home.AllTranslations .Translations) }}
+            {{ if ne $.Site.Language .Language }}
+              {{ if $node.Scratch.Get "separator" }}
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                {{ $node.Scratch.Set "separator" false }}
               {{ end }}
               <li class="navigation-item">
-                <a class="navigation-link" href="{{ .Lang | relLangURL }}">
-                  {{ upper .Lang }}
-                </a>
+                <a href="{{ .RelPermalink }}">{{ .Language.LanguageName | emojify }}</a>
               </li>
             {{ end }}
           {{ end }}
         {{ end }}
-
       </ul>
     {{ end }}
-
   </section>
 </nav>
