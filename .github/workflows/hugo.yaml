@@ -48,11 +48,7 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        run: hugo \
-               --cleanDestinationDir \
-               --gc \
-               --minify \
-               --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: hugo --cleanDestinationDir --gc --minify --baseURL "https://howboutthemapples.github.io/"
 
       # 6) Upload the artifact specifically for GitHub Pages
       - name: Upload Pages artifact
