@@ -1,4 +1,4 @@
-name: Deploy Hugo site to Pages
+name: Build & Deploy Hugo to GitHub Pages
 
 on:
   push:
@@ -7,67 +7,50 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read      # for checkout
-  pages: write        # to push to gh-pages
-  id-token: write     # for OIDC if you use it
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: pages
+  group: deploy
   cancel-in-progress: false
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1) Checkout your repo
-      - name: Checkout repository
+      # 1) Fetch your code
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: true
           fetch-depth: 0
 
-      # 2) Install Hugo (extended) via the official action
+      # 2) Install Hugo Extended
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.121.0'    # bump as desired
+          hugo-version: '0.121.0'
           extended: true
 
-      # 3) Clean out any stale output
-      - name: Clean old public/
-        run: rm -rf ./public
+      # 3) Optionally remove old output
+      - name: Clean previous build
+        run: rm -rf public/
 
-      # 4) Configure Pages (captures baseURL for you)
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
+      # 4) Build your site
+      - name: Build
+        run: hugo --cleanDestinationDir --gc --minify
 
-      # 5) Build your site
-      - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-        run: hugo \
-               --cleanDestinationDir \
-               --gc \
-               --minify \
-               --baseURL "${{ steps.pages.outputs.base_url }}/"
-
-      # 6) Upload the artifact specifically for GitHub Pages
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./public
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
+      # 5) Deploy to gh-pages branch
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v3
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # Directory to publish
+          publish_dir: ./public
+          # Force the action to create the branch if it doesn’t exist
+          publish_branch: gh-pages
+          # Token with write access to this repo
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Optional: upstream remote name if you forked
+          # remote_name: origin
