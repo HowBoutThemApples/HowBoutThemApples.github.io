@@ -1,0 +1,15 @@
++++ 
+title = "De La Salle Collegiate High School"
+description = ""
+image = ""
+imageLink = ""
+authors = ["Christine Enright", "Reese Gerjekian"]
++++
+
+---
+
+More information soon!
+
+{{< embedMap `` >}}
+
+{{< CraftShowImage >}}
