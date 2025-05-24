@@ -1,8 +1,8 @@
 +++ 
-title = "L’Anse Creuse High School North Bands' 38th Annual Craft Christmas Craft Show"
+title = "L’Anse Creuse High School North Bands' Christmas Craft Show"
 description = ""
-image = "/images/CraftShows/LCchristmas24.png"
-imageLink = "https://www.lcnbands.com/_files/ugd/64db35_f97f56949d904d70911e069821f637ab.pdf"
+image = "/images/CraftShows/LCNchristmas25.jpg"
+imageLink = "https://festivalnet.com/71592/Macomb-Michigan/Holiday-Celebrations/Crafty-Christmas-Craft-Show"
 authors = ["Christine Enright", "Reese Gerjekian"]
 +++
 
