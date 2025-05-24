@@ -212,9 +212,63 @@
         </div>
     </div>
 </div>
+
+
+<div class="social-feeds">
+  <div class="feed instagram-feed">
+    <blockquote
+      class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/how_boutthemapples/?utm_source=ig_embed&amp;utm_campaign=loading"
+      data-instgrm-version="14"
+      style="height: 500px;"
+    ></blockquote>
+    <script async src="//www.instagram.com/embed.js"></script>
+  </div>
+
+  <div class="feed facebook-feed">
+    <iframe
+      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FHowBoutDemApples&tabs=timeline&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+      scrolling="no"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      style="width: 100%;"
+    ></iframe>
+  </div>
+</div>
 </section>
 
 <style>
+ 
+  .container.centered {
+    display: flex;
+    flex-direction: column;
+  }
+
+.social-feeds {
+  display: grid;
+   
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+   
+  grid-auto-rows: auto;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+ 
+.feed {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.instagram-feed blockquote,
+.facebook-feed iframe {
+  flex: 1 1 auto;
+  width: 100% !important;
+  height: auto !important;
+  overflow: auto;
+}
+
   .show-card {
     position: relative;
     overflow: hidden;
