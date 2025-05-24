@@ -151,10 +151,15 @@ languageName = ":en:"
 
 [[languages.en.menu.main]]
 name = "About"
-weight = 2
+weight = 3
 url = "about/"
 
 [[languages.en.menu.main]]
 name = "Apple Purchases"
-weight = 1
+weight = 2
 url = "apple-purchase-request/"
+
+[[languages.en.menu.main]]
+name = "Home"
+weight = 1
+url = "/"

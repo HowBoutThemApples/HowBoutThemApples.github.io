@@ -1,7 +1,7 @@
 # data/shows.yaml
 - name: "L’Anse Creuse High School North"
   startDate: "2024-04-20"
-  image: "/images/CraftShows/LCspring24.png"
+  image: "/images/CraftShows/LCNchristmas25.jpg"
   url: "/shows/lanse-creuse-north-spring24"
 - name: "F45"
   startDate: "2024-05-18"
@@ -26,7 +26,7 @@
   url: "/shows/macomb-community-college"  
 - name: "Dakota High School"
   startDate: "2025-11-01"
-  image: "/images/square-transparent.png"
+  image: "/images/CraftShows/2025-Dakota-Winter.jpg"
   url: "/shows/dakota-high-school"
 - name: "Chippewa Valley High School"
   startDate: "2025-11-08"
