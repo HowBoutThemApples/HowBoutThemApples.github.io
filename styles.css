@@ -195,6 +195,10 @@ p {
   border: none;
   padding: 0.5rem;
   cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .nav-toggle span {
@@ -202,7 +206,6 @@ p {
   width: 22px;
   height: 2px;
   background: var(--ink);
-  margin: 4px 0;
 }
 
 .hero {
