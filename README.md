@@ -1,18 +1,8 @@
-# How Bout Them Apples
+# How Bout Them Apples 🍎
 
-Static, no-build website for How Bout Them Apples by Christine Enright.
+Handmade caramel and chocolate apples by Christine Enright in Macomb County, Michigan. Small-batch caramel, thick chocolate shells, and generous toppings that stay put.
 
-## Structure
-- `index.html` – landing page with upcoming shows and CTAs
-- `shows.html` – full craft show list with map embeds
-- `order.html` – apple purchase request builder (mailto)
-- `about.html` – brand story
-- `main.js` / `styles.css` – tiny bundle of scripts and styles
-- `images/` – logos, apple photos, craft show posters, and app icons
-
-## Local preview
-Open `index.html` in a browser or run a simple server:
-```bash
-python3 -m http.server 8000
-```
-Then visit http://localhost:8000.
+- Order apples: email [enrightsapples@gmail.com](mailto:enrightsapples@gmail.com) with your flavors and quantity (volume pricing at 25+).
+- Find us in person: check upcoming craft shows and day-of updates on Instagram and Facebook.
+- Social: Instagram [@hbta00](https://www.instagram.com/hbta00/) · Facebook [How Bout Them Apples](https://www.facebook.com/HowBoutDemApples)
+- Website: https://howboutthemapples.github.io
