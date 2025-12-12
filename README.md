@@ -6,3 +6,4 @@ Handmade caramel and chocolate apples by Christine Enright in Macomb County, Mic
 - Find us in person: check upcoming craft shows and day-of updates on Instagram and Facebook.
 - Social: Instagram [@hbta00](https://www.instagram.com/hbta00/) · Facebook [How Bout Them Apples](https://www.facebook.com/HowBoutDemApples)
 - Website: https://howboutthemapples.github.io
+- Privacy & Terms: https://howboutthemapples.github.io/policies.html
