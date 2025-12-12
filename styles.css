@@ -199,18 +199,15 @@ p {
   gap: 6px; /* modern browsers */
   justify-content: center;
   align-items: flex-start;
+  width: 40px;
+  height: 40px;
 }
 
-.nav-toggle span {
-  display: block;
+.nav-toggle svg {
   width: 22px;
-  height: 2px;
-  background: var(--ink);
-}
-
-/* flex gap fallback for older mobile Safari */
-.nav-toggle span + span {
-  margin-top: 6px;
+  height: 22px;
+  stroke: var(--ink);
+  stroke-width: 2;
 }
 
 .hero {
