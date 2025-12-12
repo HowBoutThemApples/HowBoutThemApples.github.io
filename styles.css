@@ -196,7 +196,7 @@ p {
   padding: 0.5rem;
   cursor: pointer;
   flex-direction: column;
-  gap: 6px;
+  gap: 6px; /* modern browsers */
   justify-content: center;
   align-items: flex-start;
 }
@@ -206,6 +206,11 @@ p {
   width: 22px;
   height: 2px;
   background: var(--ink);
+}
+
+/* flex gap fallback for older mobile Safari */
+.nav-toggle span + span {
+  margin-top: 6px;
 }
 
 .hero {
