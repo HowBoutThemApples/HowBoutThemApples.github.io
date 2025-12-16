@@ -148,6 +148,8 @@ const appleFlavors = [
   { id: "take5", name: "Take 5", image: "images/apples/take5.png", popularity: 5 }
 ];
 
+const THEME_KEY = "hbta-theme";
+
 const dateFormat = new Intl.DateTimeFormat("en-US", {
   month: "short",
   day: "numeric",
@@ -447,7 +449,44 @@ function setupNavToggle() {
   });
 }
 
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const toggle = document.querySelector("[data-theme-toggle]");
+  if (toggle) {
+    toggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
+    toggle.querySelector(".theme-icon").textContent = theme === "dark" ? "🍏" : "🍎";
+    toggle.querySelector(".theme-label").textContent = theme === "dark" ? "Dark" : "Light";
+  }
+}
+
+function initThemeToggle() {
+  const stored = (() => {
+    try {
+      return localStorage.getItem(THEME_KEY);
+    } catch {
+      return null;
+    }
+  })();
+  const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches;
+  const initialTheme = stored || (prefersDark ? "dark" : "light");
+  applyTheme(initialTheme);
+
+  const toggle = document.querySelector("[data-theme-toggle]");
+  if (!toggle) return;
+
+  toggle.addEventListener("click", () => {
+    const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(next);
+    try {
+      localStorage.setItem(THEME_KEY, next);
+    } catch {
+      /* ignore */
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  initThemeToggle();
   setupNavToggle();
   const page = document.body.dataset.page;
   if (page === "home") {

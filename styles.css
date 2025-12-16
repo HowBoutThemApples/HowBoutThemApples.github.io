@@ -7,7 +7,39 @@
   --muted: #5c6b52;
   --line: #d9d2c4;
   --glow: 0 20px 60px rgba(47, 107, 58, 0.12);
+  --tint: rgba(47, 107, 58, 0.08);
+  --tint-strong: rgba(47, 107, 58, 0.14);
+  --tint-soft: rgba(47, 107, 58, 0.05);
+  --tint-micro: rgba(47, 107, 58, 0.04);
+  --accent-tint: rgba(244, 139, 61, 0.08);
+  --header-bg: rgba(247, 243, 235, 0.92);
+  --footer-bg: #f1eadd;
+  --bg-gradient: radial-gradient(circle at 15% 18%, rgba(47, 107, 58, 0.14), transparent 28%),
+    radial-gradient(circle at 82% 8%, rgba(244, 139, 61, 0.12), transparent 32%),
+    radial-gradient(circle at 72% 82%, rgba(47, 107, 58, 0.08), transparent 42%);
   font-family: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f1511;
+  --card: #121c14;
+  --primary: #7fd48b;
+  --accent: #ffb16a;
+  --ink: #f3efe5;
+  --muted: #c2c9bc;
+  --line: #253126;
+  --glow: 0 20px 60px rgba(127, 212, 139, 0.15);
+  --tint: rgba(127, 212, 139, 0.12);
+  --tint-strong: rgba(127, 212, 139, 0.2);
+  --tint-soft: rgba(127, 212, 139, 0.08);
+  --tint-micro: rgba(127, 212, 139, 0.06);
+  --accent-tint: rgba(255, 177, 106, 0.12);
+  --header-bg: rgba(12, 18, 14, 0.9);
+  --footer-bg: #0d130f;
+  --bg-gradient: radial-gradient(circle at 18% 18%, rgba(127, 212, 139, 0.18), transparent 30%),
+    radial-gradient(circle at 82% 6%, rgba(255, 177, 106, 0.16), transparent 35%),
+    radial-gradient(circle at 70% 80%, rgba(127, 212, 139, 0.1), transparent 45%);
 }
 
 *,
@@ -19,9 +51,7 @@
 body {
   margin: 0;
   color: var(--ink);
-  background: radial-gradient(circle at 20% 20%, rgba(47, 107, 58, 0.08), transparent 28%),
-    radial-gradient(circle at 80% 0%, rgba(244, 139, 61, 0.08), transparent 35%),
-    var(--bg);
+  background: var(--bg-gradient), var(--bg);
 }
 
 a {
@@ -75,7 +105,7 @@ p {
   display: inline-block;
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
-  background: rgba(47, 107, 58, 0.12);
+  background: var(--tint);
   color: var(--primary);
   font-weight: 700;
 }
@@ -103,7 +133,7 @@ p {
 }
 
 .btn.ghost {
-  background: rgba(47, 107, 58, 0.08);
+  background: var(--tint);
 }
 
 .btn:hover {
@@ -121,13 +151,13 @@ p {
 }
 
 .chip.is-active {
-  background: rgba(47, 107, 58, 0.14);
+  background: var(--tint-strong);
   border-color: var(--primary);
   color: var(--primary);
 }
 
 .chip.ghost {
-  background: rgba(47, 107, 58, 0.08);
+  background: var(--tint);
 }
 
 .site-header {
@@ -135,7 +165,7 @@ p {
   top: 0;
   z-index: 10;
   backdrop-filter: blur(8px);
-  background: rgba(247, 243, 235, 0.92);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--line);
 }
 
@@ -185,7 +215,7 @@ p {
 }
 
 .main-nav a.is-active {
-  background: rgba(47, 107, 58, 0.1);
+  background: var(--tint);
   color: var(--primary);
 }
 
@@ -208,6 +238,35 @@ p {
   height: 22px;
   stroke: var(--ink);
   stroke-width: 2;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--glow);
+}
+
+.theme-icon {
+  display: inline-block;
 }
 
 .hero {
@@ -274,7 +333,7 @@ p {
 }
 
 .panel.soft {
-  background: rgba(47, 107, 58, 0.05);
+  background: var(--tint-soft);
 }
 
 .panel-header {
@@ -306,7 +365,7 @@ p {
 }
 
 .badge {
-  background: #fff;
+  background: var(--card);
   border-radius: 999px;
   padding: 0.55rem 0.85rem;
   border: 1px solid var(--line);
@@ -329,7 +388,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  background: #fff;
+  background: var(--card);
   border-radius: 14px;
   padding: 1rem;
   border: 1px solid var(--line);
@@ -340,7 +399,7 @@ p {
   aspect-ratio: 3 / 4;
   object-fit: contain;
   border-radius: 10px;
-  background: rgba(47, 107, 58, 0.06);
+  background: var(--tint-soft);
   border: 1px solid var(--line);
   padding: 0.4rem;
 }
@@ -360,7 +419,7 @@ details {
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 0.75rem 0.9rem;
-  background: rgba(47, 107, 58, 0.04);
+  background: var(--tint-micro);
 }
 
 details summary {
@@ -395,7 +454,7 @@ details iframe {
   padding: 0.9rem 1rem;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: #fff;
+  background: var(--card);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -408,7 +467,7 @@ details iframe {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(47, 107, 58, 0.12);
+  background: var(--tint);
   color: var(--primary);
   display: grid;
   place-items: center;
@@ -428,7 +487,7 @@ details iframe {
 
 .site-footer {
   border-top: 1px solid var(--line);
-  background: #f1eadd;
+  background: var(--footer-bg);
   margin-top: 3rem;
 }
 
@@ -461,7 +520,7 @@ details iframe {
 }
 
 .order-notes {
-  background: rgba(47, 107, 58, 0.08);
+  background: var(--tint);
   padding: 1rem;
   border-radius: 12px;
   border: 1px solid var(--line);
@@ -475,7 +534,7 @@ details iframe {
 }
 
 .flavor-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 0.9rem;
@@ -490,7 +549,7 @@ details iframe {
   height: 130px;
   object-fit: cover;
   border-radius: 10px;
-  background: rgba(47, 107, 58, 0.06);
+  background: var(--tint-soft);
   overflow: hidden;
 }
 
@@ -516,7 +575,7 @@ details iframe {
 }
 
 .order-summary {
-  background: rgba(47, 107, 58, 0.06);
+  background: var(--tint-soft);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 1rem;
@@ -546,7 +605,7 @@ details iframe {
 }
 
 .about-card {
-  background: rgba(47, 107, 58, 0.06);
+  background: var(--tint-soft);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 1.1rem;
@@ -640,7 +699,7 @@ details iframe {
   .main-nav {
     position: absolute;
     inset: 70px 16px auto 16px;
-    background: #fff;
+    background: var(--card);
     padding: 0.8rem;
     border-radius: 12px;
     border: 1px solid var(--line);
