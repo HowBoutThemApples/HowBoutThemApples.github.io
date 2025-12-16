@@ -316,11 +316,111 @@ p {
   margin: 1rem 0 0;
 }
 
+
 .chip-row {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-top: 1rem;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.game-side {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.game-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: var(--glow);
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.game-score {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.game-card canvas {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    radial-gradient(circle at 18% 16%, var(--tint-soft), transparent 40%),
+    radial-gradient(circle at 80% 10%, var(--accent-tint), transparent 40%),
+    var(--card);
+  background-size: 22px 22px, 22px 22px, auto, auto, auto;
+}
+
+.game-info {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: var(--glow);
+}
+
+.game-status {
+  margin-top: 0.6rem;
+}
+
+.game-target {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--tint-soft);
+}
+
+.game-target img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 240px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 0.35rem;
+}
+
+.game-target-name {
+  margin: 0;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.game-order-btn {
+  width: 100%;
+  margin-top: 0.4rem;
+  justify-content: center;
+}
+
+@media (max-width: 960px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .panel {

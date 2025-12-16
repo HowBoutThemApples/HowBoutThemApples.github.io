@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Craft Shows | How Bout Them Apples</title>
-  <meta name="description" content="See where How Bout Them Apples will be dipping next.">
+  <title>Play Apple Trail | How Bout Them Apples</title>
+  <meta name="description" content="Play a quick apple trail game while you browse How Bout Them Apples.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="images/apple-favicon-50.png">
 </head>
-<body data-page="shows">
+<body data-page="game">
   <header class="site-header">
     <div class="nav-bar container">
       <a class="brand" href="index.html">
@@ -24,7 +24,7 @@
       </a>
       <nav class="main-nav" data-nav>
         <a href="index.html">Home</a>
-        <a href="shows.html" class="is-active">Craft Shows</a>
+        <a href="shows.html">Craft Shows</a>
         <a href="order.html">Order Apples</a>
         <a href="about.html">About</a>
       </nav>
@@ -45,18 +45,46 @@
   <main>
     <section class="page-hero container">
       <div>
-        <p class="pill">Craft &amp; vendor shows</p>
-        <h1>Find us on the road.</h1>
-        <p class="lede">Bookmark this page for fresh dates, booth updates, and day-of details.</p>
-      </div>
-      <div class="filter-row">
-        <button class="chip is-active" data-filter="upcoming">Upcoming</button>
-        <button class="chip" data-filter="past">Past</button>
+        <p class="pill">Just for fun</p>
+        <h1>How Bout Them Apples Arcade</h1>
+        <p class="lede">Dash through How Bout Them Apples flavors—collect apples, avoid your own trail, and steer with arrow keys or WASD.</p>
       </div>
     </section>
 
     <section class="panel container">
-      <div id="shows-grid" class="card-grid"></div>
+      <div class="game-grid">
+        <div class="game-card">
+          <div class="game-header">
+            <div>
+              <p class="eyebrow">Score</p>
+              <p class="game-score"><span id="game-score">0</span> apples</p>
+            </div>
+            <button class="btn ghost" type="button" id="game-reset">Restart</button>
+          </div>
+          <canvas id="apple-game" width="440" height="440" aria-label="Apple trail game area"></canvas>
+          <p class="muted game-status" id="game-status"></p>
+        </div>
+        <div class="game-side">
+          <div class="game-info">
+            <h2>How to play</h2>
+            <ul class="bullet-list">
+              <li>Use arrow keys or WASD to steer the caramel trail.</li>
+              <li>Collect apples to grow and score points.</li>
+              <li>Avoid hitting the walls or your own trail.</li>
+              <li>Need a fresh start? Hit Restart.</li>
+            </ul>
+            <p class="muted small-print">Tip: the game speeds up as you collect more apples.</p>
+          </div>
+          <div class="game-target">
+            <img id="current-flavor-img" alt="Apple flavor target" src="images/apples/caramel.png">
+            <div>
+              <p class="eyebrow">Next apple flavor</p>
+              <p class="game-target-name" id="current-flavor-name">Caramel</p>
+            </div>
+          </div>
+          <a class="btn primary game-order-btn" href="order.html">Order these apples</a>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -67,7 +95,7 @@
         <p class="muted">Hand-dipped caramel apples by Christine Enright. Made in Macomb County, Michigan.</p>
       </div>
       <div class="footer-nav">
-        <a href="shows.html" class="is-active">Shows</a>
+        <a href="shows.html">Shows</a>
         <a href="order.html">Order</a>
         <a href="about.html">About</a>
         <a href="game.html" aria-label="Play the arcade">Arcade</a>

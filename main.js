@@ -148,6 +148,29 @@ const appleFlavors = [
   { id: "take5", name: "Take 5", image: "images/apples/take5.png", popularity: 5 }
 ];
 
+const TRAIL_APPLE_IMAGES = [
+  "images/apples/caramel.png",
+  "images/apples/applePie.png",
+  "images/apples/oreo.png",
+  "images/apples/bananaPudding.png",
+  "images/apples/strawberrycheesecake.png",
+  "images/apples/darkChocolateSeaSalt.png",
+  "images/apples/pretzel.png",
+  "images/apples/smore.png",
+  "images/apples/m-and-m.png",
+  "images/apples/heath.png",
+  "images/apples/cinnamontoastcrunch.png",
+  "images/apples/candyCane.png",
+  "images/apples/pinaColada.png",
+  "images/apples/coconut.png",
+  "images/apples/sprinkle.png",
+  "images/apples/take5.png"
+];
+
+const TRAIL_APPLE_FLAVORS = appleFlavors.filter(flavor => TRAIL_APPLE_IMAGES.includes(flavor.image));
+
+let loadedTrailSprites = null; // [{ flavor, img }]
+
 const THEME_KEY = "hbta-theme";
 
 const dateFormat = new Intl.DateTimeFormat("en-US", {
@@ -438,6 +461,284 @@ function copySummaryToClipboard() {
   }
 }
 
+function loadTrailSprites() {
+  if (loadedTrailSprites) return loadedTrailSprites;
+  loadedTrailSprites = TRAIL_APPLE_FLAVORS.map(flavor => {
+    const img = new Image();
+    img.src = flavor.image;
+    img.loaded = false;
+    img.onload = () => {
+      img.loaded = true;
+    };
+    return { flavor, img };
+  });
+  return loadedTrailSprites;
+}
+
+function startAppleTrailGame() {
+  const canvas = document.getElementById("apple-game");
+  const scoreEl = document.getElementById("game-score");
+  const statusEl = document.getElementById("game-status");
+  const resetBtn = document.getElementById("game-reset");
+  const targetImg = document.getElementById("current-flavor-img");
+  const targetName = document.getElementById("current-flavor-name");
+  if (!canvas || !scoreEl || !statusEl || !resetBtn) return;
+
+  const ctx = canvas.getContext("2d");
+  const spriteEntries = loadTrailSprites();
+  const pickEntry = () => spriteEntries[Math.floor(Math.random() * spriteEntries.length)];
+  const cssVars = getComputedStyle(document.documentElement);
+  let gridSize = 22;
+  let cells = window.innerWidth <= 540 ? 15 : 20;
+  let trail = [{ x: 10, y: 10 }];
+  let flavorQueue = [];
+  let direction = { x: 1, y: 0 };
+  let nextDirection = { x: 1, y: 0 };
+  let apple = { x: 5, y: 5, entry: pickEntry() };
+  let score = 0;
+  let speed = 180;
+  let loopId;
+  let isOver = false;
+  let touchStart = null;
+
+  function resizeCanvas() {
+    const wrapper = canvas.parentElement;
+    if (!wrapper) return;
+    const size = Math.min(Math.max(wrapper.clientWidth, 240), 460);
+    canvas.width = size;
+    canvas.height = size;
+    gridSize = size / cells;
+  }
+
+  function handleResize() {
+    const desiredCells = window.innerWidth <= 540 ? 15 : 20;
+    if (desiredCells !== cells) {
+      cells = desiredCells;
+      reset();
+    } else {
+      resizeCanvas();
+      draw();
+    }
+  }
+
+  function updateTargetDisplay(entry) {
+    if (!targetImg || !targetName) return;
+    targetImg.src = entry.flavor.image;
+    targetImg.alt = entry.flavor.name;
+    targetName.textContent = entry.flavor.name;
+  }
+
+  function reset() {
+    trail = [{ x: 10, y: 10 }];
+    flavorQueue = [];
+    direction = { x: 1, y: 0 };
+    nextDirection = { x: 1, y: 0 };
+    apple = randomApple();
+    score = 0;
+    speed = 180;
+    isOver = false;
+    scoreEl.textContent = "0";
+    statusEl.textContent = "";
+    resizeCanvas();
+    clearInterval(loopId);
+    loopId = setInterval(tick, speed);
+    draw();
+  }
+
+  function randomApple() {
+    let spot;
+    do {
+      spot = { x: Math.floor(Math.random() * cells), y: Math.floor(Math.random() * cells) };
+    } while (trail.some(p => p.x === spot.x && p.y === spot.y));
+    const entry = pickEntry();
+    updateTargetDisplay(entry);
+    return { ...spot, entry };
+  }
+
+  function drawGrid() {
+    const line = cssVars.getPropertyValue("--line") || "#d9d2c4";
+    ctx.strokeStyle = line.trim();
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (let i = 1; i < cells; i++) {
+      const pos = i * gridSize + 0.5;
+      ctx.moveTo(pos, 0);
+      ctx.lineTo(pos, canvas.height);
+      ctx.moveTo(0, pos);
+      ctx.lineTo(canvas.width, pos);
+    }
+    ctx.stroke();
+  }
+
+  function drawAppleSegment(x, y, entry, isHead) {
+    const pad = isHead ? 2 : 3;
+    const size = gridSize - pad * 2;
+    const px = x * gridSize + pad;
+    const py = y * gridSize + pad;
+    const imgEl = entry?.img || entry;
+    if (imgEl?.complete && imgEl.width > 0) {
+      ctx.drawImage(imgEl, px, py, size, size);
+      if (isHead) {
+        ctx.strokeStyle = "rgba(0,0,0,0.15)";
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(px + 0.5, py + 0.5, size - 1, size - 1);
+      }
+    } else {
+      // fallback circle if image not ready
+      const centerX = px + size / 2;
+      const centerY = py + size / 2;
+      const radius = size / 2;
+      ctx.fillStyle = isHead ? "#d9512f" : "#c4442b";
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  function drawBasketHead(x, y) {
+    const size = gridSize - 6;
+    const px = x * gridSize + 3;
+    const py = y * gridSize + 3;
+    ctx.fillStyle = "#c27b35";
+    ctx.strokeStyle = "#8a5824";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.roundRect(px, py + 4, size, size - 6, 4);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.strokeStyle = "#8a5824";
+    ctx.moveTo(px + 4, py + 6);
+    ctx.lineTo(px + size - 4, py + 6);
+    ctx.moveTo(px + size * 0.25, py + 6);
+    ctx.lineTo(px + size * 0.25, py - 2);
+    ctx.moveTo(px + size * 0.75, py + 6);
+    ctx.lineTo(px + size * 0.75, py - 2);
+    ctx.stroke();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--card");
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    drawGrid();
+    // apple target
+    const targetImgEl = apple.entry?.img;
+    if (targetImgEl?.complete && targetImgEl.width > 0) {
+      const size = gridSize - 6;
+      ctx.drawImage(targetImgEl, apple.x * gridSize + 3, apple.y * gridSize + 3, size, size);
+      ctx.strokeStyle = "rgba(0,0,0,0.15)";
+      ctx.lineWidth = 1;
+      ctx.strokeRect(apple.x * gridSize + 3.5, apple.y * gridSize + 3.5, size - 1, size - 1);
+    } else {
+      ctx.font = "18px 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText("🍏", apple.x * gridSize + gridSize / 2, apple.y * gridSize + gridSize / 2 + 1);
+    }
+    // trail as mom's apple flavors
+    trail.forEach((segment, idx) => {
+      if (idx === 0) {
+        drawBasketHead(segment.x, segment.y);
+      } else {
+        const flavorEntry = flavorQueue[idx - 1];
+        drawAppleSegment(segment.x, segment.y, flavorEntry, false);
+      }
+    });
+  }
+
+  function tick() {
+    direction = nextDirection;
+    const head = { x: trail[0].x + direction.x, y: trail[0].y + direction.y };
+
+    if (head.x < 0 || head.y < 0 || head.x >= cells || head.y >= cells || trail.some(p => p.x === head.x && p.y === head.y)) {
+      gameOver();
+      return;
+    }
+
+    const willGrow = head.x === apple.x && head.y === apple.y;
+    trail.unshift({ ...head });
+    if (willGrow) {
+      score += 1;
+      scoreEl.textContent = score;
+      flavorQueue.push(apple.entry);
+      apple = randomApple();
+      speed = Math.max(90, speed - 6);
+      clearInterval(loopId);
+      loopId = setInterval(tick, speed);
+    } else {
+      trail.pop();
+    }
+    draw();
+  }
+
+  function gameOver() {
+    isOver = true;
+    clearInterval(loopId);
+    statusEl.textContent = "Trail bumped! Press Restart or hit Space to play again.";
+  }
+
+  function setDirection(x, y) {
+    if (isOver) return;
+    if (x === -direction.x && y === -direction.y) return;
+    nextDirection = { x, y };
+  }
+
+  window.addEventListener("keydown", e => {
+    const key = e.key.toLowerCase();
+    const isControlKey = ["arrowup", "arrowdown", "arrowleft", "arrowright", "w", "a", "s", "d", " "].includes(key);
+    if (isControlKey && !["input", "textarea", "select"].includes(e.target.tagName.toLowerCase())) {
+      e.preventDefault();
+    }
+    if (["arrowup", "w"].includes(key)) setDirection(0, -1);
+    else if (["arrowdown", "s"].includes(key)) setDirection(0, 1);
+    else if (["arrowleft", "a"].includes(key)) setDirection(-1, 0);
+    else if (["arrowright", "d"].includes(key)) setDirection(1, 0);
+    else if (key === " " && isOver) {
+      reset();
+    }
+  });
+
+  canvas.addEventListener(
+    "touchstart",
+    e => {
+      const t = e.touches[0];
+      touchStart = { x: t.clientX, y: t.clientY };
+    },
+    { passive: true }
+  );
+
+  canvas.addEventListener(
+    "touchmove",
+    e => {
+      if (touchStart) e.preventDefault();
+    },
+    { passive: false }
+  );
+
+  canvas.addEventListener("touchend", e => {
+    if (!touchStart) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStart.x;
+    const dy = t.clientY - touchStart.y;
+    const threshold = 20;
+    if (Math.abs(dx) > threshold || Math.abs(dy) > threshold) {
+      if (Math.abs(dx) > Math.abs(dy)) {
+        setDirection(dx > 0 ? 1 : -1, 0);
+      } else {
+        setDirection(0, dy > 0 ? 1 : -1);
+      }
+    }
+    touchStart = null;
+  });
+
+  window.addEventListener("resize", handleResize);
+
+  resetBtn.addEventListener("click", reset);
+  handleResize();
+  reset();
+}
+
 function setupNavToggle() {
   const toggle = document.querySelector("[data-nav-toggle]");
   if (!toggle) return;
@@ -498,5 +799,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (page === "order") {
     buildOrderForm();
+  }
+  if (page === "game") {
+    startAppleTrailGame();
   }
 });
