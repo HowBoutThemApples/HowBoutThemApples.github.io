@@ -8,11 +8,29 @@ const shows = [
     description: "A community craft and vendor show supporting the LCN Bands program.",
     mapEmbed: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2935.053761496954!2d-82.87274432366071!3d42.63902021743174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88251f81282f467f%3A0x9b9a8b30de95f09b!2sL%27Anse%20Creuse%20High%20School%20-%20North!5e0!3m2!1sen!2sus!4v1710787666500!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
   },
+    {
+    id: "crunch-time-market",
+    name: "Sherwood Brewing - Crunch Time Market",
+    startDate: "2025-12-20",
+    image: "images/craft-shows/crunch-time-market.png",
+    infoLink: "https://www.sherwoodbrewing.com/crunch",
+    description: "Shop local makers, grab some tasty treats, and find those perfect last-minute gifts — all in one stop!",
+    mapEmbed: `<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d46966.137696059!2d-82.975069!3d42.632027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824e0dc2089ade3%3A0x4f08919f6dad406b!2sSherwood%20Brewing%20Company!5e0!3m2!1sen!2sus!4v1765855888815!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+  },
+    {
+    id: "madison-high-school-2025",
+    name: "Madison High School 5th Annual Holiday Craft Fair",
+    startDate: "2025-12-13",
+    image: "images/craft-shows/2025-madison-heights.png",
+    infoLink: "https://allevents.in/madison-heights/madison-5th-annual-craft-fair/200028885681512",
+    description: "Madison District Parent Boosters present the 5th Annual Craft Fair & Holiday Market!",
+    mapEmbed: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2941.923361276713!2d-83.10006047366697!3d42.49318192668049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824cf9b3a09e55d%3A0x22f68b233886cf82!2sMadison%20High%20School!5e0!3m2!1sen!2sus!4v1765856016182!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+  },
   {
     id: "f45",
     name: "F45",
     startDate: "2024-05-18",
-    image: "images/square-transparent.png",
+    image: "images/long-green.png",
     description: "Details coming soon."
   },
   {
@@ -20,7 +38,7 @@ const shows = [
     name: "De La Salle Collegiate High School",
     startDate: "2025-11-21",
     endDate: "2025-11-22",
-    image: "images/square-transparent.png",
+    image: "images/long-green.png",
     description: "Holiday craft show weekend at De La Salle.",
     mapEmbed: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2198.096444278513!2d-82.97711257624499!3d42.515105365243606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824d9945217eefd%3A0xa410829961b47ae1!2sDe%20La%20Salle%20Collegiate!5e0!3m2!1sen!2sus!4v1748105873273!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
   },
@@ -28,21 +46,21 @@ const shows = [
     id: "clawson-elks",
     name: "Clawson Elks",
     startDate: "2024-10-06",
-    image: "images/square-transparent.png",
+    image: "images/long-green.png",
     description: "Details coming soon."
   },
   {
     id: "anchor-bay",
     name: "Anchor Bay High School",
     startDate: "2024-10-12",
-    image: "images/square-transparent.png",
+    image: "images/long-green.png",
     description: "Details coming soon."
   },
   {
     id: "macomb-community-college",
     name: "Macomb Community College",
     startDate: "2024-10-26",
-    image: "images/square-transparent.png",
+    image: "images/long-green.png",
     description: "Details coming soon."
   },
   {
@@ -58,7 +76,7 @@ const shows = [
     id: "chippewa-valley-high-school",
     name: "Chippewa Valley High School Craft Fair",
     startDate: "2025-11-08",
-    image: "images/square-transparent.png",
+    image: "images/long-green.png",
     infoLink: "https://www.cvhs-bands.com/cvhs-craft-fair.html",
     description: "31st Annual Fall / Holiday Craft Fair benefiting Chippewa Valley High School Bands. 9:30 a.m. – 4:00 p.m.",
     mapEmbed: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2936.3056646166533!2d-82.9386201!3d42.612473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824dfa61e7798ed%3A0x82997899af3cf8d1!2sChippewa%20Valley%20High%20School!5e0!3m2!1sen!2sus!4v1748105810125!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
@@ -76,7 +94,7 @@ const shows = [
     id: "athens-high-school",
     name: "Athens High School",
     startDate: "2024-12-14",
-    image: "images/square-transparent.png",
+    image: "images/long-green.png",
     description: "Details coming soon."
   },
   {
@@ -84,7 +102,7 @@ const shows = [
     name: "Birchwood Mall",
     startDate: "2024-12-21",
     endDate: "2024-12-22",
-    image: "images/square-transparent.png",
+    image: "images/long-green.png",
     description: "Details coming soon."
   }
 ];
@@ -230,6 +248,7 @@ function renderUpcomingShows(targetId, limit = 3) {
     return;
   }
   container.innerHTML = "";
+  container.classList.toggle("is-single", list.length === 1);
   list.forEach(show => container.appendChild(createShowCard(show)));
 }
 
@@ -249,6 +268,7 @@ function renderShowList(targetId, filter = "upcoming") {
     return;
   }
 
+  container.classList.toggle("is-single", list.length === 1);
   list.forEach(show => container.appendChild(createShowCard(show)));
 }
 

@@ -320,6 +320,11 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+.card-grid.is-single {
+  grid-template-columns: minmax(260px, 360px);
+  justify-content: center;
+}
+
 .show-card {
   display: flex;
   flex-direction: column;
@@ -331,10 +336,13 @@ p {
 }
 
 .show-card img {
-  height: 160px;
   width: 100%;
-  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
   border-radius: 10px;
+  background: rgba(47, 107, 58, 0.06);
+  border: 1px solid var(--line);
+  padding: 0.4rem;
 }
 
 .date {
